@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css  " />
+    <link rel="stylesheet" href="CSS/Buttons.css" />
+    <title>Encriptador</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="#"
+        ><img
+          src="Assets/SVG/imagen_2023-01-03_120923969-removebg-preview.svg"
+          alt="Encripter logo"
+        />
+      </a>
+      <h1>Encriptador</h1>
+    </header>
+
+    <main class="encripador-container">
+      <div class="encriptador">
+        <form action="">
+          <input
+            onkeydown="return validarLetra(event)"
+            class="encripter-text"
+            type="text"
+            placeholder="Ingrese el texto que quiere desencriptar"
+          />
+        </form>
+        <div class="btn-container">
+          <button class="close">encriptar</button>
+
+          <button class="up desncriptar">desencriptar</button>
+        </div>
+      </div>
+
+      <div class="result-container">
+        <div class="result-text-container"></div>
+
+        <!-- <img src="Assets/SVG/undraw_join_re_w1lh.svg" alt="" /> -->
+        <div class="fire-flower-container">
+          <div class="fire">
+            <div class="logs">
+              <div class="log l1"></div>
+              <div class="log l2"></div>
+            </div>
+            <div class="flames">
+              <div class="flame f1"></div>
+              <div class="flame f2"></div>
+              <div class="flame f3"></div>
+            </div>
+            <div class="sparks">
+              <div class="spark s1"></div>
+              <div class="spark s2"></div>
+              <div class="spark s3"></div>
+              <div class="spark s4"></div>
+              <div class="spark s5"></div>
+              <div class="spark s6"></div>
+              <div class="spark s7"></div>
+              <div class="spark s8"></div>
+            </div>
+          </div>
+        </div>
+        <button class="up secontcopy">Copiar</button>
+      </div>
+    </main>
+
+    <script src="JS/code.js"></script>
+  </body>
+</html>
