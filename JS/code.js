@@ -1,3 +1,14 @@
+// html Elements
+const encripterText = document.querySelector(".encripter-text"),
+  ResultText = document.querySelector(".result-text-container"),
+  encripterBtn = document.querySelector(".close"),
+  desencriptorBtn = document.querySelector(".up"),
+  copyBTn = document.querySelector(".secontcopy"),
+  fireFlowered = document.querySelector(".fire-flower-container"),
+  copyBtn = document.querySelector(".secontcopy");
+
+//functions
+
 const validarLetra = (e) => {
   key = e.keyCode || e.which;
   tecla = String.fromCharCode(key).toLowerCase();
@@ -16,29 +27,19 @@ const validarLetra = (e) => {
 };
 
 const encriptor = () => {
-  const encripterText = document.querySelector(".encripter-text");
-
   const encripter = encripterText.value.toLowerCase();
 
-  let text = encripter.replace(/e/gim, "enter");
-  text = text.replace(/o/gim, "ober");
-  text = text.replace(/a/gim, "ai");
-  text = text.replace(/i/gim, "imes");
-  text = text.replace(/u/gim, "ufat");
-
-  // encripterText.addEventListener("keydown", (e) => {
-  //   validarLetra(e);
-  // });
-
-  const ResultText = document.querySelector(".result-text-container");
+  let text = encripter.replace(/e/im, "enter");
+  text = text.replace(/o/im, "ober");
+  text = text.replace(/a/im, "ai");
+  text = text.replace(/i/im, "imes");
+  text = text.replace(/u/im, "ufat");
 
   if (text == "") ResultText.innerHTML = "No hay nada escrito";
   else ResultText.innerHTML = text;
 };
 
 const desencriptor = () => {
-  const encripterText = document.querySelector(".encripter-text");
-
   const encripter = encripterText.value.toLowerCase();
 
   let text = encripter.replace(/enter/gim, "e");
@@ -46,15 +47,11 @@ const desencriptor = () => {
   text = text.replace(/ai/gim, "a");
   text = text.replace(/imes/gim, "i");
   text = text.replace(/ufat/gim, "u");
-
-  const ResultText = document.querySelector(".result-text-container");
-
   if (text == "") ResultText.innerHTML = "No hay nada escrito";
   else ResultText.innerHTML = text;
 };
 
 const copy = () => {
-  const resultText = document.querySelector(".result-text-container");
   const seleccion = document.createRange();
   seleccion.selectNodeContents(resultText);
   window.getSelection().removeAllRanges();
@@ -63,22 +60,29 @@ const copy = () => {
   window.getSelection().removeRange(seleccion);
 };
 
-const encripterBtn = document.querySelector(".close"),
-  desencriptorBtn = document.querySelector(".up"),
-  copyBTn = document.querySelector(".secontcopy");
-
+// Events
 document.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     encriptor();
+    fireFlowered.style.display = "none";
+    if (ResultText.value === "No hay nada escrito") copyBTn.style.display = "none";
+    else copyBTn.style.display = "block";
   }
 });
 
 encripterBtn.addEventListener("click", () => {
   encriptor();
+  fireFlowered.style.display = "none";
+  if (ResultText.value === "No hay nada escrito") copyBTn.style.display = "none";
+  else copyBTn.style.display = "block";
 });
 
 desencriptorBtn.addEventListener("click", () => {
   desencriptor();
+  fireFlowered.style.display = "none";
+  copyBTn.style.display = "block";
+  if (ResultText.value === "No hay nada escrito") copyBTn.style.display = "none";
+  else copyBTn.style.display = "block";
 });
 
 copyBTn.addEventListener("click", () => {

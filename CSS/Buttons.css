@@ -72,8 +72,8 @@
 }
 
 .up {
-  --color: #e4cb58;
-  --hover: #94e458;
+  --color: rgb(1, 202, 253);
+  --hover: rgb(0, 89, 255);
 }
 
 .slide {

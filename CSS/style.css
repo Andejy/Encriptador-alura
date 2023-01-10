@@ -76,8 +76,7 @@ body {
   background-color: transparent;
   padding: 0.5rem;
   margin-bottom: 3rem;
-}
-.encriptador > form > input:focus {
+  text-transform: lowercase;
 }
 
 .result-container {
@@ -89,10 +88,24 @@ body {
   align-items: center;
   background-color: #303134;
   margin-top: -2rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
+  animation: respiracion 5s ease infinite;
 }
+
+.fire-flower-container {
+  transition: 0.5;
+}
+
 .result-text-container {
   font-size: 1.5rem;
+  background-color: #303134;
+  border: none;
+  color: #fff;
+  display: inherit;
+  outline: none;
+  resize: none;
+  height: 100vh;
 }
 
 .fire {
@@ -141,6 +154,7 @@ body {
 }
 .secontcopy {
   transform: translateY(4rem);
+  display: none;
 }
 
 .l1 {
@@ -210,6 +224,20 @@ body {
   50% {
     background-color: var(--blueFired);
     box-shadow: -10px -10px 0 10px rgb(0, 162, 255), -15px -15px 0 15px rgb(1, 202, 253);
+  }
+}
+
+@keyframes respiracion {
+  0%,
+  100% {
+    box-shadow: 3px 5px 30px -7px rgb(0, 162, 255), 3px 5px 30px -7px rgb(1, 203, 253);
+  }
+  25%,
+  75% {
+    box-shadow: 3px 5px 30px 7px rgb(0, 89, 255), 3px 5px 30px -7px rgb(1, 202, 253);
+  }
+  50% {
+    box-shadow: 3px 5px 30px -7px rgb(0, 162, 255), 3px 5px 30px -7px rgb(1, 202, 253);
   }
 }
 
@@ -290,12 +318,15 @@ body {
     font-size: 1.9rem;
   }
   .result-container {
-    width: 100vw;
+    width: 80vw;
     margin-top: 5rem;
     margin-bottom: -12rem;
+    width: 25rem;
+    height: 30rem;
   }
-  .fire {
-    margin-top: 7rem;
+
+  .fire-flower-container {
+    display: none;
   }
 }
 
@@ -305,7 +336,7 @@ body {
   }
 
   .result-container {
-    width: 100vw;
+    width: 25rem;
     margin-top: 5rem;
     margin-bottom: -12rem;
   }
