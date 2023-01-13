@@ -29,11 +29,11 @@ const validarLetra = (e) => {
 const encriptor = () => {
   const encripter = encripterText.value.toLowerCase();
 
-  let text = encripter.replace(/e/im, "enter");
-  text = text.replace(/o/im, "ober");
-  text = text.replace(/a/im, "ai");
-  text = text.replace(/i/im, "imes");
-  text = text.replace(/u/im, "ufat");
+  let text = encripter.replace(/e/gim, "enter");
+  text = text.replace(/o/gim, "ober");
+  text = text.replace(/a/gim, "al");
+  text = text.replace(/i/gim, "imes");
+  text = text.replace(/u/gim, "ufat");
 
   if (text == "") ResultText.innerHTML = "No hay nada escrito";
   else ResultText.innerHTML = text;
@@ -44,7 +44,7 @@ const desencriptor = () => {
 
   let text = encripter.replace(/enter/gim, "e");
   text = text.replace(/ober/gim, "o");
-  text = text.replace(/ai/gim, "a");
+  text = text.replace(/al/gim, "a");
   text = text.replace(/imes/gim, "i");
   text = text.replace(/ufat/gim, "u");
   if (text == "") ResultText.innerHTML = "No hay nada escrito";
@@ -53,7 +53,7 @@ const desencriptor = () => {
 
 const copy = () => {
   const seleccion = document.createRange();
-  seleccion.selectNodeContents(resultText);
+  seleccion.selectNodeContents(ResultText);
   window.getSelection().removeAllRanges();
   window.getSelection().addRange(seleccion);
   const res = document.execCommand("copy");
