@@ -78,6 +78,11 @@ body {
   margin-bottom: 3rem;
   text-transform: lowercase;
 }
+.encripter-text::placeholder {
+  text-align: center;
+  letter-spacing: 2;
+  text-transform: capitalize;
+}
 
 .result-container {
   display: flex;
