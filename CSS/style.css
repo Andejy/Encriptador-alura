@@ -50,7 +50,6 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 30rem;
-  width: 30rem;
 }
 
 .encriptador > form {
@@ -125,14 +124,21 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .encriptador {
+    width: 20rem;
+  }
+  .encripter-form {
+    width: 19rem;
+  }
   .encriptador > form > input {
     font-size: 1.5rem;
   }
 
   .result-container {
-    width: 20rem;
+    width: 19rem;
+    height: 19rem;
     margin-top: 3rem;
-    margin-bottom: -10rem;
+    margin-bottom: 10rem;
   }
 }
 
